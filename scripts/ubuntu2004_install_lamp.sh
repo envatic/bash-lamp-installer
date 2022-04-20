@@ -73,6 +73,10 @@ expose_php=Off
 session_save_path='/var/lib/php/sessions'
 
 # Install Apache and PHP packages
+sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt install -y php 
+sudo apt install -y  php-xml php-xmlrpc php-gd php-imagick  php-imap php-mbstring php-soap php-zip php-redis php-intl -y
 apt-get install -y libapache2-mod-php libapache2-mod-php apache2 apache2-utils php-cli php-pear php-mysql php-gd php-dev php-curl php-opcache
 /usr/sbin/a2dismod mpm_event
 /usr/sbin/a2enmod access_compat alias auth_basic authn_core authn_file authz_core authz_groupfile authz_host authz_user autoindex deflate dir env filter mime mpm_prefork negotiation rewrite setenvif socache_shmcb ssl status php7.4 mpm_prefork
